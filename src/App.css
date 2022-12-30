@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400;600;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.bodyContainer{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+}

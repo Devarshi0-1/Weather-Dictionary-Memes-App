@@ -1,0 +1,63 @@
+#weatherApp {
+    border: 1px solid red;
+    width: 40%;
+}
+
+.weatherHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    gap: 20px;
+}
+
+.searchIcon{
+    font-size: 2rem;
+}
+
+.weatherHeader input{
+    border: 0;
+    border: 1px solid red;
+    outline: none;
+    border-radius: 7px;
+    font-size: 20px;
+    padding: 5px 10px;
+    margin-block: 10px;
+}
+
+.dataCont{
+    padding: 10px;
+}
+
+.dataCont > *{
+    margin-block: 10px;
+}
+
+.dataCont h2{
+    text-align: left;
+    font-size: 4rem;
+    font-weight:400;
+}
+
+.temperature{
+    font-size: 3.5rem;
+}
+.cloudSunIcon{
+    display: inline;
+    font-size: 2rem;
+    /* color: white; */
+}
+
+.weatherDesc{
+    display: inline;
+    font-size: 2rem;
+    margin-left: 10px;
+}
+
+.humidity{
+    font-size: 1.5rem;
+}
+
+.windSpeed{
+    font-size: 1.5rem;
+}

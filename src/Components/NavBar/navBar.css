@@ -1,0 +1,28 @@
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 13px 30px;
+    color: white;
+    border: 2px solid red;
+    background-color: rgb(42, 42, 42);
+}
+
+.leftNav{
+    font-size: 1.7rem;
+}
+
+.navList{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.navListItems a{
+    margin-inline: 20px;
+    color: inherit;
+    text-decoration: none;
+}
