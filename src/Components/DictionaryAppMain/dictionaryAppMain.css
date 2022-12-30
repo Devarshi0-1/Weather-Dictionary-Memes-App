@@ -1,19 +1,15 @@
-#weatherApp {
+#dictionaryApp {
     width: 40%;
 }
 
-.weatherHeader{
+.dictionaryHeader {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
 
-.searchIcon{
-    font-size: 2rem;
-}
-
-.weatherHeader input{
+.dictionaryHeader input {
     border: 0;
     outline: none;
     border-radius: 7px;
@@ -22,39 +18,23 @@
     margin-block: 10px;
 }
 
-.dataCont{
-    padding: 10px;
-}
-
-.dataCont > *{
-    margin-block: 10px;
-}
-
-.dataCont h2{
-    text-align: left;
-    font-size: 4rem;
-    font-weight:400;
-}
-
-.temperature{
+.word {
     font-size: 3.5rem;
 }
-.cloudSunIcon{
-    display: inline;
+
+.partOfSpeech {
     font-size: 2rem;
     /* color: white; */
 }
 
-.weatherDesc{
-    display: inline;
+.definition {
     font-size: 2rem;
-    margin-left: 10px;
 }
 
-.humidity{
+.synonyms {
     font-size: 1.5rem;
 }
 
-.windSpeed{
+.antonyms {
     font-size: 1.5rem;
 }

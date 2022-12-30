@@ -7,7 +7,6 @@ function WeatherOuterContainer() {
             <main id='weatherOuterContainer'>
                 <WeatherAppMain />
             </main>
-            
         </>
     )
 }
