@@ -1,11 +1,16 @@
 #weatherApp {
-    width: 40%;
+    width: 50%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+    color: white;
 }
 
 .weatherHeader{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -14,47 +19,63 @@
 }
 
 .weatherHeader input{
+    width: 50%;
+    font-size: 1.5rem;
     border: 0;
     outline: none;
-    border-radius: 7px;
-    font-size: 20px;
     padding: 5px 10px;
+    border-radius: 20px;
     margin-block: 10px;
+    color: inherit;
+    background-color: rgba(255, 255, 255, 0.505);
 }
 
-.dataCont{
-    padding: 10px;
+.primaryDataCont{
+    height: 40%;
+    padding: 20px;
+    position: relative;
 }
 
-.dataCont > *{
-    margin-block: 10px;
+.cityName{
+    font-weight: 600;
+    font-size: 1.3rem;
 }
 
-.dataCont h2{
-    text-align: left;
+.temp{
     font-size: 4rem;
-    font-weight:400;
-}
-
-.temperature{
-    font-size: 3.5rem;
-}
-.cloudSunIcon{
-    display: inline;
-    font-size: 2rem;
-    /* color: white; */
+    font-weight: 900;
 }
 
 .weatherDesc{
-    display: inline;
-    font-size: 2rem;
-    margin-left: 10px;
+    position: absolute;
+    right: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    transform: rotate(1.75turn);
 }
 
-.humidity{
-    font-size: 1.5rem;
+.secondaryDataCont{
+    height: 60%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    padding-bottom: 20px;
 }
 
-.windSpeed{
+.secondaryDataCont > *{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 20px;
     font-size: 1.5rem;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.secondaryDataCont > * > :first-child{
+    font-weight: 700;
 }
