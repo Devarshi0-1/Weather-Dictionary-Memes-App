@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import useFetch from '.././useFetch'
 import { BsSearch } from "react-icons/bs";
 import './dictionaryAppMain.css'
 
@@ -6,37 +7,11 @@ function DictionaryAppMain() {
 
     const [word, setWord] = useState("hello")
     const [searchText, setSearchText] = useState("hello")
-    const [apiData, setApiData] = useState({})
-    const [error, setError] = useState(null)
-    const [loading, setLoading] = useState(true)
+    const { error, loading, apiData } = useFetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchText}`)
 
     const typingSearch = (e) => {
         setWord(e.target.value)
     }
-
-    const fetchData = () => {
-        const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${searchText}`
-
-        fetch(url)
-            .then((res) => {
-                if (!res.ok)
-                    throw Error("Could Not Fetch Data From The Resource")
-                return res.json()
-            })
-            .then((data) => {
-                setApiData(data)
-                setError(null)
-                setLoading(false)
-                console.log(data);
-            }).catch((err) => {
-                setError(err.message)
-                setLoading(false)
-            })
-    }
-
-    useEffect(() => {
-        fetchData()
-    }, [searchText])
 
     return (
         <div id='dictionaryApp'>

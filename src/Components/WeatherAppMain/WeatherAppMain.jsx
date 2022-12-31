@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { BsSearch } from "react-icons/bs";
+import useFetch from '../useFetch';
 import './weatherAppMain.css'
 
 
@@ -7,36 +8,11 @@ function WeatherAppMain() {
 
     const [cityName, setCityName] = useState("Mumbai")
     const [searchText, setSearchText] = useState("Mumbai")
-    const [apiData, setApiData] = useState({})
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState()
+    const { error, loading, apiData } = useFetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchText}&appid=08944be3d93b96381bb076f055633247&units=metric`)
 
     const typingSearch = (e) => {
         setCityName(e.target.value)
     }
-
-    const fetchData = () => {
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchText}&appid=08944be3d93b96381bb076f055633247&units=metric`
-        fetch(url)
-            .then((res) => {
-                if (!res.ok) {
-                    throw Error("Could Not Fetch Data From The Resource")
-                }
-                return res.json()
-            })
-            .then((data) => {
-                setApiData(data)
-                setLoading(false)
-                setError(null)
-            }).catch((err) => {
-                setLoading(false)
-                setError(err.message)
-            })
-    }
-
-    useEffect(() => {
-        fetchData()
-    }, [searchText])
 
     return (
         <div id="weatherApp">
