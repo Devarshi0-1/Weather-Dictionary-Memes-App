@@ -6,8 +6,8 @@ import './weatherAppMain.css'
 
 function WeatherAppMain() {
 
-    const [cityName, setCityName] = useState("Mumbai")
-    const [searchText, setSearchText] = useState("Mumbai")
+    const [cityName, setCityName] = useState("London")
+    const [searchText, setSearchText] = useState("London")
     const { error, loading, apiData } = useFetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchText}&appid=08944be3d93b96381bb076f055633247&units=metric`)
     const secondaryDataCont = useRef()
 
@@ -15,10 +15,16 @@ function WeatherAppMain() {
         setCityName(e.target.value)
     }
 
+    const enterPressed = (e) => {
+        if (e.key === 'Enter') {
+            setSearchText(e.target.value)
+        }
+    }
+
     return (
         <div id="weatherApp">
             <div className="weatherHeader">
-                <input type="text" placeholder='Enter City Name' value={cityName} onChange={typingSearch} />
+                <input type="text" placeholder='Enter City Name' value={cityName} onChange={typingSearch} onKeyDown={enterPressed}/>
                 <div className="searchCont"><BsSearch className='searchIcon' onClick={() => setSearchText(cityName)} /></div>
             </div>
             {(error ? <h2>{error}</h2> :
@@ -28,6 +34,7 @@ function WeatherAppMain() {
                             <h1 className="cityName">{apiData.name}</h1>
                             <p className="temp">{apiData.main.temp}°C</p>
                             <p className="weatherDesc">{apiData.weather[0].main}</p>
+                            <div className='weatherIconCont'><img src={`http://openweathermap.org/img/wn/${apiData.weather[0].icon}@2x.png`} alt="Weather Icon" className='weatherIcon' /></div>
                         </div>
                         <div className="secondaryDataCont" ref={secondaryDataCont}>
                             <div className='minTemp'>
@@ -55,8 +62,8 @@ function WeatherAppMain() {
                                 <p>Pressure</p>
                             </div>
                         </div>
-                    </div> :
-                    <h2 className="loading">Loading...</h2>
+                    </div>
+                    : <h2 className='loading'>Fetching Data...</h2>
                 )
             )}
         </div>

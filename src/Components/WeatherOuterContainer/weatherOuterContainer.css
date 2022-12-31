@@ -3,7 +3,4 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-image: url('../../assets/weatherBackground.jpg');
-    background-position: center;
-    background-size: cover;
 }
