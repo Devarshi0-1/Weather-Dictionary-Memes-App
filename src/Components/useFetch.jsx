@@ -23,7 +23,26 @@ const useFetch = (url) => {
             })
     }, [url])
 
-    return { error, loading, apiData }
+    const refetch = () => {
+        setLoading(true)
+        fetch(url)
+            .then((res) => {
+                if (!res.ok) {
+                    throw Error("Could Not Fetch Data From The Resource")
+                }
+                return res.json()
+            })
+            .then((data) => {
+                setApiData(data)
+                setLoading(false)
+                setError(null)
+            }).catch((err) => {
+                setLoading(false)
+                setError(err.message)
+            })
+    }
+
+    return { error, loading, apiData, refetch}
 }
 
 export default useFetch;

@@ -9,7 +9,7 @@ function NavBar() {
                 <ul className="navList">
                     <li className="navListItems"><Link to="/">Weather</Link></li>
                     <li className="navListItems"><Link to="/dictionary">Dictionary</Link></li>
-                    <li className="navListItems"><Link href="#">MemeApp</Link></li>
+                    <li className="navListItems"><Link to="/memesApp">MemeApp</Link></li>
                     <li className="navListItems"><Link href="#">AboutMe</Link></li>
                     <li className="navListItems"><Link href="#">ContactMe</Link></li>
                 </ul>

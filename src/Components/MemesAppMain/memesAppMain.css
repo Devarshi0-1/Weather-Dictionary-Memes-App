@@ -1,0 +1,8 @@
+.memeContainer{
+    height: 50%;
+    aspect-ratio: 50%;
+}
+
+.memeContainer img{
+    height: 500px;
+}
