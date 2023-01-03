@@ -9,7 +9,7 @@ function WeatherAppMain() {
     const [cityName, setCityName] = useState("London")
     const [searchText, setSearchText] = useState("London")
     const apiKey = '08944be3d93b96381bb076f055633247'
-    const { error, loading, apiData } = useFetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchText}&appid=${apiKey}&units=metric`)
+    const [ error, loading, apiData ] = useFetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchText}&appid=${apiKey}&units=metric`)
     const secondaryDataCont = useRef()
 
     const typingSearch = (e) => {

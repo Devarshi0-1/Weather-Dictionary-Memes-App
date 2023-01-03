@@ -13,7 +13,7 @@
     width: 100%;
     display: grid;
     grid-template-rows: 1fr 9fr;
-    background-image: url('./assets/weatherBackground.jpg');
+    background-image: url('./assets/background.svg');
     background-position: center;
     background-size: cover;
 }

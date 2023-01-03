@@ -41,8 +41,8 @@ const useFetch = (url) => {
                 setError(err.message)
             })
     }
-
-    return { error, loading, apiData, refetch}
+    console.log(url);
+    return [ error, loading, apiData, refetch]
 }
 
 export default useFetch;
