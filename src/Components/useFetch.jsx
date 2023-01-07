@@ -30,8 +30,9 @@ const useFetch = (url) => {
     }, [url])
 
     const refetch = () => {
+        const controller = new AbortController()
         setLoading(true)
-        fetch(url)
+        fetch(url, { signal: controller.signal })
             .then((res) => {
                 if (!res.ok) {
                     throw Error("Could Not Fetch Data From The Resource")
@@ -46,6 +47,9 @@ const useFetch = (url) => {
                 setLoading(false)
                 setError(err.message)
             })
+        return () => {
+            controller.abort()
+        }
     }
     console.log(url)
     return [error, loading, apiData, refetch]
