@@ -6,7 +6,9 @@ const useFetch = (url) => {
     const [apiData, setApiData] = useState(null)
 
     useEffect(() => {
-        fetch(url)
+        const controller = new AbortController()
+
+        fetch(url, { signal: controller.signal })
             .then((res) => {
                 if (!res.ok) {
                     throw Error("Could Not Fetch Data From The Resource")
@@ -21,6 +23,10 @@ const useFetch = (url) => {
                 setLoading(false)
                 setError(err.message)
             })
+
+        return () => {
+            controller.abort()
+        }
     }, [url])
 
     const refetch = () => {
@@ -41,8 +47,8 @@ const useFetch = (url) => {
                 setError(err.message)
             })
     }
-    console.log(url);
-    return [ error, loading, apiData, refetch]
+    console.log(url)
+    return [error, loading, apiData, refetch]
 }
 
 export default useFetch;
