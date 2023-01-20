@@ -22,15 +22,18 @@ nav {
     font-size: 1.5rem;
 }
 
-.navListItems a {
+.navListItems{
     margin-inline: 20px;
+}
+
+.navListItems * {
     padding: 5px 10px;
     border-radius: 10px;
     color: inherit;
     text-decoration: none;
-    transition: background-color 500ms,box-shadow 500ms,color 500ms;
+    transition: background-color 500ms, box-shadow 500ms, color 500ms;
 }
 
-.navListItems.active a {
+.navListItems.active * {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.409);
 }

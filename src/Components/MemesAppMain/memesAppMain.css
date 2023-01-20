@@ -13,7 +13,7 @@
     overflow: hidden;
 }
 
-.modal{
+.modal {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,14 +22,16 @@
     height: 100%;
 }
 
-.warning{
+.warning {
     width: 70%;
 }
 
-.modal h2{
+.modal h2 {
     text-align: center;
     font-size: 2rem;
     margin-block: 20px;
+    color: rgb(255, 0, 0);
+    text-shadow: 0 0 10px black;
 }
 
 .memeMainCont {
@@ -55,11 +57,16 @@
     padding: 5px 10px;
     border-radius: 20px;
     border: none;
-    background-color: rgba(255, 255, 255, 0.281);
     backdrop-filter: blur(10px);
     cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.281);
     transition: backdrop-filter 500ms;
 }
+
+#memesApp .modal button {
+    background-color: rgb(255, 79, 79);
+}
+
 
 #memesApp button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);

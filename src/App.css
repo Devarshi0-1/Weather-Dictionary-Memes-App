@@ -13,7 +13,7 @@
     width: 100%;
     display: grid;
     grid-template-rows: 1fr 9fr;
-    background-image: url('./assets/background.jpg');
+    background-image: url(/public/appBackground.jpg);
     background-position: center;
     background-size: cover;
     overflow: hidden;

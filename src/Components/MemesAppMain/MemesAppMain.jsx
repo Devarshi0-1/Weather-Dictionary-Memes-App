@@ -16,7 +16,7 @@ function MemesAppMain() {
             {modalShow ?
                 <div className="modal">
                     <div className="warning">
-                        <h2>Warning! The Following Content May Be Inappropriate!</h2>
+                        <h2>The Following Content May Be Inappropriate!</h2>
                         <h2>TRIGGER WARNING!</h2>
                     </div>
                     <button onClick={handleWarningClick}>Accept and Proceed</button>

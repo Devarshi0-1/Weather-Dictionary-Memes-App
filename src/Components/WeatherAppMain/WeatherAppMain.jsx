@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { BsSearch } from "react-icons/bs";
 import useFetch from '../useFetch';
 import './weatherAppMain.css'
@@ -10,7 +10,6 @@ function WeatherAppMain() {
     const [searchText, setSearchText] = useState("London")
     const apiKey = '08944be3d93b96381bb076f055633247'
     const [ error, loading, apiData ] = useFetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchText}&appid=${apiKey}&units=metric`)
-    const secondaryDataCont = useRef()
 
     const typingSearch = (e) => {
         setCityName(e.target.value)
@@ -35,9 +34,11 @@ function WeatherAppMain() {
                             <h1 className="cityName">{apiData.name}</h1>
                             <p className="temp">{apiData.main.temp}°C</p>
                             <p className="weatherDesc">{apiData.weather[0].main}</p>
-                            <div className='weatherIconCont'><img src={`http://openweathermap.org/img/wn/${apiData.weather[0].icon}@2x.png`} alt="Weather Icon" className='weatherIcon' /></div>
+                            <div className='weatherIconCont'>
+                                <img src={`http://openweathermap.org/img/wn/${apiData.weather[0].icon}@4x.png`} alt="Weather Icon" className='weatherIcon' />
+                            </div>
                         </div>
-                        <div className="secondaryDataCont" ref={secondaryDataCont}>
+                        <div className="secondaryDataCont">
                             <div className='minTemp'>
                                 <p>{apiData.main.temp_min}°C</p>
                                 <p>Min Temp</p>
