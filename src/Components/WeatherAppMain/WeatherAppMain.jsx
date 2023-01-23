@@ -9,7 +9,7 @@ function WeatherAppMain() {
     const [cityName, setCityName] = useState("London")
     const [searchText, setSearchText] = useState("London")
     const apiKey = '08944be3d93b96381bb076f055633247'
-    const [ error, loading, apiData ] = useFetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchText}&appid=${apiKey}&units=metric`)
+    const [error, loading, apiData] = useFetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchText}&appid=${apiKey}&units=metric`)
 
     const typingSearch = (e) => {
         setCityName(e.target.value)
@@ -35,7 +35,7 @@ function WeatherAppMain() {
                             <p className="temp">{apiData.main.temp}°C</p>
                             <p className="weatherDesc">{apiData.weather[0].main}</p>
                             <div className='weatherIconCont'>
-                                <img src={`http://openweathermap.org/img/wn/${apiData.weather[0].icon}@4x.png`} alt="Weather Icon" className='weatherIcon' />
+                                <img src={`https://openweathermap.org/img/wn/${apiData.weather[0].icon}@4x.png`} alt="Weather Icon" className='weatherIcon' />
                             </div>
                         </div>
                         <div className="secondaryDataCont">
